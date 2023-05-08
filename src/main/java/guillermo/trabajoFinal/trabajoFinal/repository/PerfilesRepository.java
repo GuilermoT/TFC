@@ -1,5 +1,10 @@
 package guillermo.trabajoFinal.trabajoFinal.repository;
 
-public interface PerfilesRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import guillermo.trabajoFinal.trabajoFinal.entity.Perfiles;
+
+
+public interface PerfilesRepository extends JpaRepository<Perfiles, Integer>{
+	
 }

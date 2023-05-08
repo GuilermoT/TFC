@@ -2,15 +2,14 @@ package guillermo.trabajoFinal.trabajoFinal.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Example;
-
 import guillermo.trabajoFinal.trabajoFinal.entity.Comentarios;
 
 
 public interface IComentariosService {
-	Picks buscarPorId(int idPicks);
-	List<Comentarios> findByAnuncios(int idUsuario);
+	void guardarComentarios(Comentarios comentarios);
+    Comentarios buscarPorId(Integer idComentarios);
+	List<Comentarios> findByAnuncios(int idAnuncios);
 	void eliminar(Integer idComentarios);
-	List<Comentarios> findByExample(Example<Comentarios> ejemplo);
 	List<Comentarios> findAll();
+	Comentarios actualizarComentario(Comentarios comentario);
 }

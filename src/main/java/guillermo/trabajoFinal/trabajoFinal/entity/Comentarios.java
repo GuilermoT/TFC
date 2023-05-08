@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +14,15 @@ public class Comentarios {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuarios usuario;
+	
+	@ManyToOne
+	@JoinColumn(name="idAnuncios")
+	private Anuncios anuncio;
+	
 	private String comentario;
 	public Integer getId() {
 		return id;

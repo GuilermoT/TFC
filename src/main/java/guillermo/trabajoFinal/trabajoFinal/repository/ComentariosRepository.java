@@ -1,5 +1,10 @@
 package guillermo.trabajoFinal.trabajoFinal.repository;
 
-public interface ComentariosRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import guillermo.trabajoFinal.trabajoFinal.entity.Comentarios;
+
+
+public interface ComentariosRepository extends JpaRepository<Comentarios, Integer>{
 
 }
