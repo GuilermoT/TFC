@@ -8,6 +8,7 @@ import guillermo.trabajoFinal.trabajoFinal.entity.Anuncios;
 
 public interface IAnunciosService {
 //crear actualizar ver eliminar guardar 
+	//FALTA ACTUALIZAR ANUNCIO
 	Anuncios guardarAnuncios(Anuncios anuncios);
     Anuncios buscarPorId(Integer idAnuncios);
 	void eliminar(Integer idAnuncios);

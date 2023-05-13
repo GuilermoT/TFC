@@ -21,14 +21,12 @@ public class FavoritosServiceImpl implements IFavoritosService{
 
 	@Override
 	public Favoritos buscarPorId(Integer idFavoritos) {
-		// TODO Auto-generated method stub
-		return null;
+		return favoritosRepository.findById(idFavoritos).orElse(null);
 	}
 
 	@Override
 	public List<Favoritos> findByUsuario(Integer idUsuarios) {
-		// TODO Auto-generated method stub
-		return null;
+		return favoritosRepository.findByUsuario(idUsuarios);
 	}
 
 	@Override

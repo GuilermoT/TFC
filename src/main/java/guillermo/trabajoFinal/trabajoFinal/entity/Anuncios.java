@@ -1,12 +1,16 @@
 package guillermo.trabajoFinal.trabajoFinal.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -27,6 +31,13 @@ public class Anuncios {
 	private Date fecha_publicacion;
 	private String ubicacion;
 	private Double precio;
+	
+	@ManyToMany(fetch=FetchType.EAGER) 
+	@JoinTable(name="anunciosactividades",
+			joinColumns = @JoinColumn(name="idAnuncios"),
+			inverseJoinColumns = @JoinColumn(name="idActividades"))
+	private List<Actividades> actividades;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -63,11 +74,27 @@ public class Anuncios {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
+	
+	public Usuarios getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuarios usuario) {
+		this.usuario = usuario;
+	}
+	public List<Actividades> getActividades() {
+		return actividades;
+	}
+	public void setActividades(List<Actividades> actividades) {
+		this.actividades = actividades;
+	}
 	@Override
 	public String toString() {
-		return "Anuncios [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", fecha_publicacion="
-				+ fecha_publicacion + ", ubicacion=" + ubicacion + ", precio=" + precio + "]";
+		return "Anuncios [id=" + id + ", usuario=" + usuario + ", titulo=" + titulo + ", descripcion=" + descripcion
+				+ ", fecha_publicacion=" + fecha_publicacion + ", ubicacion=" + ubicacion + ", precio=" + precio
+				+ ", actividades=" + actividades + "]";
 	}
+	
+	
 	
 }
 	
