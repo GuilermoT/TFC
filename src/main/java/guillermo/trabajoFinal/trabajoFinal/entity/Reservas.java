@@ -20,7 +20,7 @@ public class Reservas {
 	@JoinColumn(name="idUsuario")
 	private Usuarios usuario;
 	@ManyToOne
-	@JoinColumn(name="idAnuncios")
+	@JoinColumn(name="idAnuncio")
 	private Anuncios anuncio;
 	private Date fecha_checkin;
 	private Date fecha_chekout;

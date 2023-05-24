@@ -20,10 +20,12 @@ public class Comentarios {
 	private Usuarios usuario;
 	
 	@ManyToOne
-	@JoinColumn(name="idAnuncios")
+	@JoinColumn(name="idAnuncio") //LA S ANUNCIOS y añadi get y set
 	private Anuncios anuncio;
 	
 	private String comentario;
+	private Integer calificacion;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -36,10 +38,30 @@ public class Comentarios {
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
+	public Usuarios getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuarios usuario) {
+		this.usuario = usuario;
+	}
+	public Anuncios getAnuncio() {
+		return anuncio;
+	}
+	public void setAnuncio(Anuncios anuncio) {
+		this.anuncio = anuncio;
+	}
+	public Integer getCalificacion() {
+		return calificacion;
+	}
+	public void setCalificacion(Integer calificacion) {
+		this.calificacion = calificacion;
+	}
 	@Override
 	public String toString() {
-		return "Comentarios [id=" + id + ", comentario=" + comentario + "]";
+		return "Comentarios [id=" + id + ", usuario=" + usuario + ", anuncio=" + anuncio + ", comentario=" + comentario
+				+ ", calificacion=" + calificacion + "]";
 	}
+	
 	
 	
 }

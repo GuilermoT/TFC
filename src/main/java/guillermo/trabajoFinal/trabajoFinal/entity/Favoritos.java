@@ -20,7 +20,7 @@ public class Favoritos {
 	private Usuarios usuario;
 	
 	@ManyToOne
-	@JoinColumn(name="idAnuncios")
+	@JoinColumn(name="idAnuncio")
 	private Anuncios anuncio;
 
 	public Integer getId() {

@@ -3,7 +3,6 @@ package guillermo.trabajoFinal.trabajoFinal.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +22,7 @@ public class Actividades {
 	@JoinTable(name="anunciosactividades",
 			joinColumns = @JoinColumn(name="idActividades"),
 			inverseJoinColumns = @JoinColumn(name="idAnuncios"))
-	private List<Anuncios> anuncios;
+	private List<Anuncios> anuncio;//quite la s a segundo anuncios
 	
 	public Integer getId() {
 		return id;
@@ -39,14 +38,14 @@ public class Actividades {
 	}
 	
 	public List<Anuncios> getAnuncios() {
-		return anuncios;
+		return anuncio;
 	}
-	public void setAnuncios(List<Anuncios> anuncios) {
-		this.anuncios = anuncios;
+	public void setAnuncios(List<Anuncios> anuncio) {
+		this.anuncio = anuncio;
 	}
 	@Override
 	public String toString() {
-		return "Actividades [id=" + id + ", nombre=" + nombre + ", anuncios=" + anuncios + "]";
+		return "Actividades [id=" + id + ", nombre=" + nombre + ", anuncio=" + anuncio + "]";
 	}
 	
 	
