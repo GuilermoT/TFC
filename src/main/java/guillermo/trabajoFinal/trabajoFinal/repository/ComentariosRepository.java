@@ -10,7 +10,7 @@ import guillermo.trabajoFinal.trabajoFinal.entity.Comentarios;
 
 
 public interface ComentariosRepository extends JpaRepository<Comentarios, Integer>{
-	@Query("select c from Comentarios c where c.idAnuncios = :idAnuncios")  
-	List<Comentarios> findByAnuncio(@Param("idAnuncios") Integer idAnuncios);
+	@Query("select c from Comentarios c where c.anuncio.id = :idAnuncios")  
+	List<Comentarios> findByAnuncio(@Param("idAnuncios") int id);   //lo cambie a Long
 	
 }

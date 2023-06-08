@@ -26,7 +26,7 @@ public class Usuarios {
 	private String password;
 	private Integer estatus;
 	private Date fechaRegistro;
-	@ManyToMany(fetch=FetchType.EAGER) //eager es para tenerlo ya cargado desde el principio
+	@ManyToMany//(fetch=FetchType.EAGER) //eager es para tenerlo ya cargado desde el principio
 	@JoinTable(name="usuarioperfil",
 			joinColumns = @JoinColumn(name="idUsuario"),
 			inverseJoinColumns = @JoinColumn(name="idPerfil"))

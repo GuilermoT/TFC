@@ -11,6 +11,6 @@ import guillermo.trabajoFinal.trabajoFinal.entity.Favoritos;
 
 
 public interface FavoritosRepository extends JpaRepository<Favoritos, Integer>{
-	@Query("select f from Favoritos f where f.idUsuarios = :idUsuarios")  
+	@Query("select f from Favoritos f where f.usuario.id = :idUsuarios")  
 	List<Favoritos> findByUsuario(@Param("idUsuarios") Integer idUsuarios);
 }
